@@ -40,7 +40,7 @@
             ></van-cell
           >
           <van-cell title="拼音:" :label="item.data.pinyin" />
-          <van-cell title="评分:" :label="item.data.score.accuracyScore" />
+          <pre><van-cell title="评分:" :label="`准确度:${item.data.score.accuracyScore}\n整体印象分:${item.data.score.emotionScore}\n流畅度分:${item.data.score.fluencyScore}\n总分:${item.data.score.totalScore}`" /></pre>
         </van-collapse-item>
       </van-collapse>
     </div>
