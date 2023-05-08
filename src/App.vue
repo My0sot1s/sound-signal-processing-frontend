@@ -22,7 +22,7 @@
           ></van-cell
         >
         <van-cell title="拼音:" :label="nowRecog.data.pinyin" />
-        <van-cell title="评分:" :label="nowRecog.data.score.accuracyScore" />
+        <pre><van-cell title="评分:" :label="`准确度:${nowRecog.data.score.accuracyScore}\n整体印象分:${nowRecog.data.score.emotionScore}\n流畅度分:${nowRecog.data.score.fluencyScore}\n总分:${nowRecog.data.score.totalScore}`" /></pre>
       </van-cell-group>
       <div class="history-title">历史录音</div>
       <van-collapse accordion v-model="activeNames">
@@ -306,7 +306,7 @@ const activeNames = ref(0)
   transform: translate(0, 100vh);
   transition: all 1s;
   .van-cell__label {
-    text-indent: 4vw;
+    padding-left: 2vw;
   }
   .play {
     font-size: 4vw;
