@@ -1,8 +1,6 @@
 import axios from 'axios'
 import { Toast } from 'vant'
 
-axios.defaults.baseURL = '/api'
-
 /* 响应拦截 */
 axios.interceptors.response.use(
   (response) => {
