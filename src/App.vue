@@ -73,7 +73,7 @@ class Sound {
   }
   async play() {
     if (!this.audio.src) {
-      this.audio.src = `http://175.178.162.207:9090/play?featureId=${this.data.featureId}`
+      this.audio.src = `${location.host}/play?featureId=${this.data.featureId}`
     }
     this.audio.play()
   }
