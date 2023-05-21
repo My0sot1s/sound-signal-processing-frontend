@@ -164,6 +164,7 @@ async function toggle() {
     const [err, res] = await uploadSound()
     if (!err) {
       // 结果成功返回
+      historyList.value = []
       console.log(res)
       nowRecog.value = new Sound(res, webm.audioURL)
       console.log(nowRecog.value.data.userName)
