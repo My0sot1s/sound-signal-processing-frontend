@@ -73,7 +73,7 @@ class Sound {
   }
   async play() {
     if (!this.audio.src) {
-      this.audio.src = `/play?featureId=${this.data.featureId}`
+      this.audio.src = `/api/play?featureId=${this.data.featureId}`
     }
     this.audio.play()
   }
