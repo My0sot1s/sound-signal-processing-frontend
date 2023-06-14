@@ -180,6 +180,7 @@ async function toggle() {
 function setRecordingAnimation() {
   notice.value = '录音中...'
   noticeBox.style.display = 'block'
+  contentBox.style.display = 'none'
   micBox.setAttribute('id', 'mic-recording')
   microPhone.loop = true
   microPhone.playSegments([0, 12], true)
