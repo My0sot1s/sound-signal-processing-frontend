@@ -148,16 +148,17 @@ async function changeUserName() {
 }
 
 // 录音逻辑
-const recording = ref(false)
+const recordStatus = ref('waiting')
 const notice = ref('点击开始录音')
 // 录音按钮被点击
 async function toggle() {
-  recording.value = !recording.value
-  if (recording.value) {
+  if (recordStatus.value === 'recognizing') return
+  if (recordStatus.value === 'waiting') {
     // 开始录音
+    recordStatus.value = 'recording'
     setRecordingAnimation()
     record()
-  } else {
+  } else if (recordStatus.value === 'recording') {
     // 结束录音，上传录音
     setRecognizingAnimation()
     await stopRecord()
@@ -172,6 +173,7 @@ async function toggle() {
         historyList.value.push(new Sound(element))
       })
       console.log(historyList)
+      recordStatus.value = 'waiting'
       setDoneAnimation()
     } else {
     }
