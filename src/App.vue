@@ -200,9 +200,9 @@ function setRecognizingAnimation() {
 
 function setDoneAnimation() {
   micBox.classList.remove('rotating')
-  contentBox.style.display = 'block'
   // rotate动画正确移除后进行移动
   requestAnimationFrame(() => {
+    contentBox.style.display = 'block'
     microPhone.playSegments([35, 51], true)
     microPhone.loop = false
     noticeBox.style.display = 'none'
